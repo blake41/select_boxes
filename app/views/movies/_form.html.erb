@@ -1,0 +1,7 @@
+<%= form_for(@movie) do |f|%>
+	<%= f.label :title %>
+	<%= f.text_field :title %><br>
+	Cast Actors in Your Movie!!<br>
+  <%= f.collection_check_boxes(:actor_ids, Actor.all, :id, :name) %><br>
+  <%= f.submit %>
+<% end %>

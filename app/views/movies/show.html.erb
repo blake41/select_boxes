@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie.title %>
+</p>
+<% if @movie.actors.empty? %>
+	Cast some actors in your movie!<br>
+<% else %>
+	Here are the actors in your movie <br>
+	<% @movie.actors.each do |actor| %>
+		<%= actor.name %><br>
+	<% end  %>
+<% end %>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
